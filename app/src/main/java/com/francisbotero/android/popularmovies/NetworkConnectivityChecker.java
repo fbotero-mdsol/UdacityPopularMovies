@@ -16,6 +16,6 @@ public class NetworkConnectivityChecker {
 
     public boolean isConnected() {
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+        return ((activeNetworkInfo != null) && (activeNetworkInfo.isConnected()));
     }
 }

@@ -47,10 +47,14 @@ public class MainActivityFragment extends Fragment {
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        ParcelableMovie[] movies = movieRepository.get();
-        if (movies != null) {
-            outState.putParcelableArray(SavedInstanceStateMovieRepository.PARCELABLE_KEY, movieRepository.get());
+        int count = adapter.getCount();
+        ArrayList<ParcelableMovie> movies = new ArrayList<>(count);
+        for (int idx = 0; idx < count; idx++) {
+            movies.add(adapter.getItem(idx));
         }
+        ParcelableMovie[] movieArray = new ParcelableMovie[count];
+        movies.toArray(movieArray);
+        outState.putParcelableArray(SavedInstanceStateMovieRepository.PARCELABLE_KEY, movieArray);
         super.onSaveInstanceState(outState);
     }
 

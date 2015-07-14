@@ -21,7 +21,7 @@ public class MovieDetailActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_movie_detail, container, false);
         Intent intent = getActivity().getIntent();
-        if (intent != null  && intent.hasExtra("Movie")) {
+        if (intent != null && intent.hasExtra("Movie")) {
             ParcelableMovie movie = intent.getParcelableExtra("Movie");
             TextView movie_title = (TextView)rootView.findViewById(R.id.movie_title);
             movie_title.setText(movie.getTitle());

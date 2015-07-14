@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
-public class ImageAdapter extends ArrayAdapter<Movie> {
+public class ImageAdapter extends ArrayAdapter<ParcelableMovie> {
     public ImageAdapter(Context context) {
         super(context, 0);
     }

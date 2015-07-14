@@ -3,7 +3,7 @@ package com.francisbotero.android.popularmovies;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class ParcelableMovie implements Parcelable, Movie {
+public class ParcelableMovie implements Parcelable {
     public String getSynopsis() {
         return synopsis;
     }
@@ -20,7 +20,6 @@ public class ParcelableMovie implements Parcelable, Movie {
         return releaseDate;
     }
 
-    @Override
     public float getRating() {
         return rating;
     }
@@ -32,15 +31,12 @@ public class ParcelableMovie implements Parcelable, Movie {
     private float rating;
     private String synopsis;
 
-
-
-
-    public ParcelableMovie(Movie movie) {
-        this.title = movie.getTitle();
-        this.posterUrl = movie.getPosterUrl();
-        this.releaseDate = movie.getReleaseDate();
-        this.rating = movie.getRating();
-        this.synopsis = movie.getSynopsis();
+    public ParcelableMovie(String title, String posterUrl, String yearReleased, float rating, String synopsis) {
+        this.title = title;
+        this.posterUrl = posterUrl;
+        this.releaseDate = yearReleased;
+        this.rating = rating;
+        this.synopsis = synopsis;
     }
 
     protected ParcelableMovie(Parcel in) {

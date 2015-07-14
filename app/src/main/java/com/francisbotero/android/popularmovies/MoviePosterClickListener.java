@@ -15,8 +15,7 @@ public class MoviePosterClickListener implements AdapterView.OnItemClickListener
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Context context = view.getContext();
         Intent detailIntent = new Intent(context, MovieDetailActivity.class);
-        Movie movieAtPosition = (Movie)parent.getItemAtPosition(position);
-        ParcelableMovie movie = new ParcelableMovie(movieAtPosition);
+        ParcelableMovie movie = (ParcelableMovie)parent.getItemAtPosition(position);
         detailIntent.putExtra("Movie", movie);
         context.startActivity(detailIntent);
     }
